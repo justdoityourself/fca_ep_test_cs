@@ -22,7 +22,7 @@ namespace EchoPractice4Test.Framework
 
         }
 
-        void Run()
+        public void Run()
         {
             foreach (var instruction in mInstructions)
             {

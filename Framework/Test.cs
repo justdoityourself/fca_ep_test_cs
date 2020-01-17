@@ -6,14 +6,14 @@ namespace EchoPractice4Test.Framework
 {
     abstract class TestInstruction
     {
-        public abstract void Run();
+        public abstract void Run(State state);
     }
 
     class Test
     {
         List<TestInstruction> mInstructions;
 
-        Test(List<TestInstruction> l)
+        public Test(List<TestInstruction> l)
         {
             mInstructions = l;
         }
@@ -24,9 +24,10 @@ namespace EchoPractice4Test.Framework
 
         public void Run()
         {
+            State state = new State();
             foreach (var instruction in mInstructions)
             {
-                instruction.Run();
+                instruction.Run(state);
             }
         }
     }

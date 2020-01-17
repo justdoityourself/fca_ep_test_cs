@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using EchoPractice4Test.Framework;
 using EchoPractice4Test.Tests;
 using OpenQA.Selenium;
@@ -10,10 +11,14 @@ namespace EchoPractice4Test
     {
         static void Main(string[] args)
         {
-            State s = new State();
-            Login l = new Login(s);
+            Test test = new Test( new List<TestInstruction> { new Login() } );
 
-            l.Run();
+            Collection collection = new Collection();
+            collection.AddTest(test);
+
+            Runner runner = new Runner(collection);
+
+            runner.Start();
         }
     }
 }

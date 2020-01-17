@@ -9,12 +9,12 @@ namespace EchoPractice4Test.Framework
     {
         List<Test> mTests;
 
-        Collection()
+        public Collection()
         {
             mTests = new List<Test>();
         }
 
-        void AddTest(Test test)
+        public void AddTest(Test test)
         {
             mTests.Add(test);
         }

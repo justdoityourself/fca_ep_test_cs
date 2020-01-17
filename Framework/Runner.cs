@@ -7,12 +7,12 @@ namespace EchoPractice4Test.Framework
     class Runner
     {
         Collection mCollection;
-        Runner(Collection _collection)
+        public Runner(Collection _collection)
         {
             mCollection = _collection;
         }
 
-        void Start()
+        public void Start()
         {
             foreach (Test test in mCollection)
             {

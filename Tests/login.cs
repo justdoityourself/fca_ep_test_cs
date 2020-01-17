@@ -10,17 +10,13 @@ namespace EchoPractice4Test.Tests
 {
     class Login : TestInstruction
     {
-        State mState;
-        public Login(State state) 
-        {
-            mState = state;
-        }
+        public Login() {}
 
-        override public void Run()
+        override public void Run(State state)
         {
             try
             {
-                IWebElement link = mState.XPATH("/html/body/div[@id='app']/div[@class='v-dialog__content v-dialog__content--active']/div[@class='v-dialog v-dialog--active v-dialog--persistent']/div[@id='license_input_dialog']/div[@class='v-card__text']/div[@class='v-input v-text-field v-input--is-focused theme--light primary--text']/div[@class='v-input__control']/div[@class='v-input__slot']/div[@class='v-text-field__slot']/input[@id='email_address']");
+                IWebElement link = state.XPATH("/html/body/div[@id='app']/div[@class='v-dialog__content v-dialog__content--active']/div[@class='v-dialog v-dialog--active v-dialog--persistent']/div[@id='license_input_dialog']/div[@class='v-card__text']/div[@class='v-input v-text-field v-input--is-focused theme--light primary--text']/div[@class='v-input__control']/div[@class='v-input__slot']/div[@class='v-text-field__slot']/input[@id='email_address']");
                 link.Click();
             }
             catch (Exception ex)
